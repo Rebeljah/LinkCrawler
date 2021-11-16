@@ -1,0 +1,66 @@
+{
+   "3.10.0 Documentation": {
+      "url": "https://docs.python.org",
+      "links": {
+         "3.11.0a2 Documentation": {
+            "url": "https://docs.python.org/3.11/",
+            "links": {
+               "Dealing with Bugs \u2014 Python 3.10.0 documentation": {
+                  "url": "https://docs.python.org/3/bugs.html",
+                  "links": {
+                     "Home - Python Developer's Guide": {
+                        "url": "https://devguide.python.org/",
+                        "links": {
+                           "PEP 664 -- Python 3.11 Release Schedule | Python.org": {
+                              "url": "https://www.python.org/dev/peps/pep-0664",
+                              "links": {
+                                 "Python Frequently Asked Questions \u2014 Python 3.10.0 documentation": {
+                                    "url": "https://docs.python.org/faq/",
+                                    "links": {
+                                       "Support the PSF with a Donation or by becoming a Supporting Member! | Python Software Foundation": {
+                                          "url": "https://www.python.org/psf/donations/",
+                                          "links": {
+                                             "PEP 0 -- Index of Python Enhancement Proposals (PEPs) | Python.org": {
+                                                "url": "http://python.org/dev/peps/",
+                                                "links": {
+                                                   "History and License \u2014 Python 3.10.0 documentation": {
+                                                      "url": "https://docs.python.org/3/license.html",
+                                                      "links": {
+                                                         "Welcome to Python.org": {
+                                                            "url": "https://www.python.org/",
+                                                            "links": {
+                                                               "PythonEventsCalendar - Python Wiki": {
+                                                                  "url": "https://wiki.python.org/moin/PythonEventsCalendar#Submitting_an_Event",
+                                                                  "links": {
+                                                                     "python-events Info Page": {
+                                                                        "url": "https://mail.python.org/mailman/listinfo/python-events",
+                                                                        "links": {
+                                                                           "The python-events Archives": {
+                                                                              "url": "https://mail.python.org/pipermail/python-events/",
+                                                                              "links": {}
+                                                                           }
+                                                                        }
+                                                                     }
+                                                                  }
+                                                               }
+                                                            }
+                                                         }
+                                                      }
+                                                   }
+                                                }
+                                             }
+                                          }
+                                       }
+                                    }
+                                 }
+                              }
+                           }
+                        }
+                     }
+                  }
+               }
+            }
+         }
+      }
+   }
+}
