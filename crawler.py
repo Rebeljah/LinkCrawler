@@ -8,6 +8,26 @@ from tree import Tree, TreeNode
 from typing import Iterable
 Strings = Iterable[str]
 
+
+class URLFilter:
+    """Configurable url filter used by Crawler class"""
+    def __init__(
+            self,
+            query='',
+            skip_visited=False
+    ):
+        self.query: str = query
+        self.skip_visited: bool = skip_visited
+
+    def filter(self, urls: Strings, skip_urls: Strings = None) -> list:
+        if self.query:
+            urls = [url for url in urls if self.query in url]
+        if self.skip_visited and skip_urls:
+            urls = [url for url in urls if url not in skip_urls]
+
+        return urls
+
+
 class Crawler:
     def __init__(
             self,
@@ -55,7 +75,7 @@ class Crawler:
             new_node = self.tree.add_child_node(title, url, parent_node)
 
         # recursively crawl a random sample of the urls
-        if new_node.get_depth() < self.tree.max_depth:
+        if new_node.depth < self.tree.max_depth:
             for url in urls:
                 self.crawl(url, parent_node=new_node)
 
@@ -74,7 +94,7 @@ class Crawler:
         if title_tag and (title := title_tag.text):
             return title
         else:
-            return 'no_title'
+            return '*NO_TITLE*'
 
     @staticmethod
     def scrape_urls(soup: BeautifulSoup) -> list[str]:
@@ -85,23 +105,4 @@ class Crawler:
             href: str = a_tag.get('href', '')
             if match := re.search(r"^(http|https)://", href):
                 urls.append(match.string)
-        return urls
-
-
-class URLFilter:
-    """Configurable url filter used by Crawler class"""
-    def __init__(
-            self,
-            query='',
-            skip_visited=False
-    ):
-        self.query: str = query
-        self.skip_visited: bool = skip_visited
-
-    def filter(self, urls: Strings, skip_urls: Strings = None) -> list:
-        if self.query:
-            urls = [url for url in urls if self.query in url]
-        if self.skip_visited and skip_urls:
-            urls = [url for url in urls if url not in skip_urls]
-
         return urls

@@ -13,14 +13,14 @@ def tree_as_dict(node: TreeNode, _temp_dict=None, _tree_dict=None) -> dict:
         _temp_dict = {}
         _tree_dict = _temp_dict
 
-    _temp_dict[node.get_title()] = {}
-    _temp_dict = _temp_dict[node.get_title()]
-    _temp_dict['url'] = node.url
+    _temp_dict[node.page_title] = {}
+    page_dict = _temp_dict[node.page_title]
+    page_dict['url'] = node.url
 
-    _temp_dict['links'] = {}
-    _temp_dict = _temp_dict['links']
+    page_dict['links'] = {}
+    links_dict = page_dict['links']
     for node in node.children:
-        tree_as_dict(node, _temp_dict)
+        tree_as_dict(node, links_dict)
 
     return _tree_dict
 
@@ -35,7 +35,7 @@ def save_tree_json(tree: Tree, folder_path: str) -> None:
     node = tree.head_node
 
     # convert head node page title to PascalCase and remove non-alpha chars
-    head_title: str = node.get_title().title()
+    head_title: str = node.page_title.title()
     head_title = ''.join(filter(str.isalpha, head_title))
 
     # generate filename using node title and timestamp

@@ -9,15 +9,6 @@ class TreeNode:
             parent_node.children.append(self)
         self.children = []
 
-    def get_depth(self) -> int:
-        return self.depth
-
-    def get_url(self) -> str:
-        return self.url
-
-    def get_title(self) -> str:
-        return self.page_title
-
 
 class Tree:
     def __init__(self, branching: int, max_depth: int):
